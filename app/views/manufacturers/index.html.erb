@@ -1,0 +1,13 @@
+<h3>Manufacturer List</h3>
+
+<div>
+  <ul>
+    <% @manufacturers.each do |manufacturer| %>
+      <li><%= link_to "#{manufacturer.name}", manufacturer_path(manufacturer) %> - <%= "#{manufacturer.country}" %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= link_to "New Manufacturer", new_manufacturer_path(@manufacturer) %>
+</div>
