@@ -3,10 +3,6 @@ class CarsController < ApplicationController
     @cars = Car.order(id: :desc).limit('20')
   end
 
-  def show
-    @car = car.find(params[:id])
-  end
-
   def new
     @car = Car.new
   end

@@ -3,10 +3,6 @@ class ManufacturersController < ApplicationController
     @manufacturers = Manufacturer.order(id: :desc).limit('20')
   end
 
-  def show
-    @manufacturer = manufacturer.find(params[:id])
-  end
-
   def new
     @manufacturer = Manufacturer.new
   end

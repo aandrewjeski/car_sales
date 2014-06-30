@@ -1,4 +1,6 @@
 class Car < ActiveRecord::Base
+  validates :name,
+    presence: true
   validates :manufacturer,
     presence: true
   validates :color,
