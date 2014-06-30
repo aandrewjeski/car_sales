@@ -7,7 +7,7 @@ feature 'user adds a new manufacturer', %Q{
 } do
 
   scenario 'user adds a new manufacturer' do
-    show = Manufacturer.create(name: 'GM',
+    manufacturer = Manufacturer.create(name: 'GM',
       country: 'USA' )
 
     visit "/manufacturers/new"

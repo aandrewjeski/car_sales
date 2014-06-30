@@ -7,7 +7,7 @@ feature 'user adds a new manufacturer', %Q{
 } do
 
   scenario 'user adds a new car' do
-    show = Car.create(name: 'Avalon', manufacturer: 'Toyota',
+    car = Car.create(name: 'Avalon', manufacturer: 'Toyota',
     color: 'silver', year: 2014, mileage: 1000)
 
     visit "/cars/new"
