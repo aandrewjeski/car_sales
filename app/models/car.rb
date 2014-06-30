@@ -7,10 +7,9 @@ class Car < ActiveRecord::Base
     presence: true
   validates :year,
     presence: true,
-    :greater_than { 1920 },
-    numericality: { only_integer: true },
+    numericality: { greater_than: 1920 },
     length: { is: 4 }
-  validates :mileage
+  validates :mileage,
     presence: true,
     numericality: { only_integer: true }
 end

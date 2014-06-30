@@ -7,24 +7,24 @@ feature 'user adds a new manufacturer', %Q{
 } do
 
   scenario 'user adds a new manufacturer' do
-    manufacturer = Manufacturer.create(name: 'GM',
+    manufacturer = Manufacturer.new(name: 'GM',
       country: 'USA' )
 
-    visit "/manufacturers/new"
+    visit new_manufacturer_path
     fill_in 'Name', with: manufacturer.name
     fill_in 'Country', with: manufacturer.country
     click_on 'Submit'
 
-    expect(page).to have_content 'Success'
+    expect(page).to have_content 'Success!'
     expect(page).to have_content manufacturer.name
     expect(page).to have_content manufacturer.country
   end
 
   scenario 'without required attributes' do
-    visit '/television_shows/new'
+    visit new_manufacturer_path
     click_on 'Submit'
 
-    expect(page).to_not have_content 'Success'
+    expect(page).to_not have_content 'Success!'
     expect(page).to have_content "can't be blank"
   end
 

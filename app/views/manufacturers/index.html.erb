@@ -3,7 +3,7 @@
 <div>
   <ul>
     <% @manufacturers.each do |manufacturer| %>
-      <li><%= link_to "#{manufacturer.name}", manufacturer_path(manufacturer) %> - <%= "#{manufacturer.country}" %></li>
+      <li><%= "#{manufacturer.name}" %> - <%= "#{manufacturer.country}" %></li>
     <% end %>
   </ul>
 </div>

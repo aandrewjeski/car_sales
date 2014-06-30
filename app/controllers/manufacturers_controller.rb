@@ -12,7 +12,7 @@ class ManufacturersController < ApplicationController
 
     if @manufacturer.save
       flash[:notice] = "Success!"
-      redirect_to manufacturers_path
+      redirect_to manufacturers_path(@manufacturers)
     else
       flash.now[:notice] = "Your manufacturer couldn't be saved."
       render :new

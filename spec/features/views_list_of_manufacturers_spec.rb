@@ -7,13 +7,13 @@ feature 'user views list of manufacturers', %Q{
 } do
 
   scenario 'user views manufacturers' do
-    manufacturer = Manufacturer.create(name: 'GM',
+    manufacturers = Manufacturer.create(name: 'GM',
       country: 'USA' )
 
-    visit '/manufacturers'
-    manufacturers.each do |manufacturer|
-      expect(page).to have_content manufacturer.name
-      expect(page).to have_content manufacturer.country
-    end
+    visit manufacturers_path
+
+    expect(page).to have_content 'GM'
+    expect(page).to have_content 'USA'
+
   end
 end
